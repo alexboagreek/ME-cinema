@@ -1,5 +1,7 @@
 import slideMenu from "./menu.js";
 import renderVideo from './renderVideo.js';
+import menuLink from './menuLink.js';
+
 
 
 slideMenu({
@@ -10,3 +12,4 @@ slideMenu({
 });
 
 renderVideo();
+menuLink();
