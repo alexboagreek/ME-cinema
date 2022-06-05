@@ -1,1 +1,3 @@
-# ME-cinema
+# me-cinema
+
+## MethED intensive course
