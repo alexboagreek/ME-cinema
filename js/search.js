@@ -7,6 +7,7 @@ const searchForm = document.querySelector('.header__search-form');
 const searchInput = document.querySelector('.header__search-input');
 
 const search = () => {
+    
     searchForm.addEventListener('submit', (event) => {
         event.preventDefault();
 

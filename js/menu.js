@@ -21,7 +21,7 @@ const slideMenu = ({ openBtn, menu, classActiveMenu, closeTrigger }) => {
         item.addEventListener('click', () => {
             closeMenu(navigation, classActiveMenu);
         })
-    })
+    });
    
 };
 

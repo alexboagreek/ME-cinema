@@ -14,16 +14,16 @@ const renderCard = async (data) => {
     card.className = "other-films__item";
 
     const link = document.createElement("a");
-    if (key) link.href = `https://youtu.be/${key}`
+    if (key) link.href = `https://youtu.be/${key}`;
     link.className = "other-films__link";
     if(item.vote_average) link.dataset.rating = item.vote_average;
 
     const img = document.createElement("img");
     img.className = "other-films__img";
     img.alt = `постер ${item.title || item.name}`;
-    
+
     img.src = item.poster_path ? 
-    `https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${item.poster_path}` :
+    `https://www.themoviedb.org/t/p/w600_and_h900_bestv2${item.poster_path}` :
     'assets/img/no-poster.jpg';
     ;
 

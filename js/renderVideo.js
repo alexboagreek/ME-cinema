@@ -4,7 +4,7 @@ import renderCard from './renderCard.js';
 
 const filmWeek = document.querySelector('.film-week');
 
-const firstRender = (data, { key } ) => {
+const firstRender = (data, { key }) => {
     const {
         vote_average: voteAverage,
         backdrop_path: backdropPath,
@@ -27,22 +27,19 @@ const firstRender = (data, { key } ) => {
              href="https://youtu.be/${key}" 
              aria-label="смотреть трейлер"></a>` : 
         ''}
-        
-
     </div>
-    `;
-
+    `
 };
 
 const renderVideo = async () => {
     const data = await getTrends();
-    const [ firstCard, ...otherCard ] = data.results;
-    otherCard.length = 12;
+    const [ firstCard, ...otherCards ] = data.results;
+    otherCards.length = 12;
 
     const video = await getVideo(firstCard.id, firstCard.media_type)
 
     firstRender(firstCard, video.results[0]);
-    renderCard(otherCard);
+    renderCard(otherCards);
 }
 
 export default renderVideo;

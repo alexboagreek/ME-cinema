@@ -2,7 +2,6 @@ const API_KEY = 'de440de8b2c056052dc479379aa4ecd0';
 const BASE_URL = 'https://api.themoviedb.org/3/';
 const LANGUAGE = '&language=ru-RU';
 
-//all/day?api_key='';
 
 const getData = url => {
     return fetch(url)
@@ -12,20 +11,19 @@ const getData = url => {
         }
         throw `Что-то пошло не так, ошибка ${response.status}`
     })
-    .catch(err => console.error());
+    .catch(err => console.error(err));
 };
 
 
 
 export const getTrends = async (type = 'all', period = 'week', page = 1) => {
-    const url = `${BASE_URL}trending/${type}/${period}?api_key=${API_KEY}${LANGUAGE}&page=${page}`
+    const url = `${BASE_URL}trending/${type}/${period}?api_key=${API_KEY}${LANGUAGE}&page=${page}`;
     return await getData(url);  
 }
 
 export const getTop = async (type, page = 1) => {
     const url = `${BASE_URL}${type}/top_rated?api_key=${API_KEY}${LANGUAGE}&page=${page}`;
     return await getData(url);  
-
 };
 
 export const getPopular = async (type, page = 1) => {
@@ -39,6 +37,6 @@ export const getVideo = async (id, type) => {
 };
 
 export const search = async (query, page) => {
-    const url = `${BASE_URL}search/multi?api_key=${API_KEY}${LANGUAGE}&page=${page}&include_adult=false&query=${query}`;
+    const url = `${BASE_URL}search/multi?api_key=${API_KEY}${LANGUAGE}&query=${query}&page=${page}&include_adult=false`;
     return await getData(url);
 };

@@ -1,4 +1,5 @@
 import { getPopular, getTop } from './services.js';
+import { getTrends } from './services.js';
 import renderCard from './renderCard.js';
 
 
@@ -19,7 +20,7 @@ const menuLink = () => {
 
                 // get trends
                 if (target.classList.contains('get-nav__link_triends')) {
-                    getTrends('triends')
+                    getTrends('triend')
                     .then(data => renderCard(data.results))
                 };
                 
@@ -29,10 +30,15 @@ const menuLink = () => {
                     .then(data => renderCard(data.results))
                 };
 
+                if (target.classList.contains('get-nav__link_popular-tv')) {
+                    getPopular('tv')
+                      .then(data => renderCard(data.results));
+                };
+
                 //get popular soap
                 if (target.classList.contains('get-nav__link_top-tv')) {
                     getTop('tv')
-                    .then(data => renderCard(data.results))
+                    .then(data => renderCard(data.results));
                 };
                   // get top films
                 if (target.classList.contains('get-nav__link_top-movies')) {
