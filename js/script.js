@@ -1,7 +1,7 @@
 import slideMenu from "./menu.js";
 import renderVideo from './renderVideo.js';
 import menuLink from './menuLink.js';
-
+import { search } from './services.js';
 
 
 slideMenu({
@@ -13,3 +13,4 @@ slideMenu({
 
 renderVideo();
 menuLink();
+search();
